@@ -1,11 +1,13 @@
 {
-  "cmd.generate.title": "Generate Commit Message",
+  "cmd.generate.title": "Generate Commit Message with ccgit",
   "cmd.openOutput.title": "Open Output Panel",
   "cmd.openConfig.title": "Open Claude Config",
-  "cfg.model.desc": "Override model for commit generation (leave empty to use `ANTHROPIC_DEFAULT_SONNET_MODEL` from Claude Code config)",
+  "cfg.model.desc": "Override model for commit generation. Priority: this setting > `ANTHROPIC_DEFAULT_SONNET_MODEL` > `ANTHROPIC_MODEL` > `claude-sonnet-4-6`. Leave empty to auto-resolve from Claude Code config.",
   "cfg.lang.desc": "Language for generated commit messages. `auto` detects from recent commits.",
   "cfg.format.desc": "Commit format. `auto` detects from recent commits.",
   "cfg.maxTokens.desc": "Maximum estimated tokens of diff sent to the model. Longer diffs are truncated with diffstat preserved.",
   "cfg.customPrompt.desc": "Custom text appended to the system prompt. Use this to add rules (e.g., 'always mention ticket numbers').",
-  "cfg.recentCommits.desc": "Number of recent commits to analyze for style detection."
+  "cfg.recentCommits.desc": "Number of recent commits to analyze for style detection.",
+  "cfg.baseUrl.desc": "Override Anthropic API base URL. Highest priority — overrides `~/.claude/settings.json`. Leave empty to use Claude Code CLI config.",
+  "cfg.apiKey.desc": "Override API key / token. Highest priority — overrides `~/.claude/settings.json`. Leave empty to use Claude Code CLI config."
 }

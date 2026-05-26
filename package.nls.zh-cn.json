@@ -1,11 +1,13 @@
 {
-  "cmd.generate.title": "生成提交信息",
+  "cmd.generate.title": "使用 ccgit 生成提交信息",
   "cmd.openOutput.title": "打开输出面板",
   "cmd.openConfig.title": "打开 Claude 配置",
-  "cfg.model.desc": "覆盖生成 commit 所用的模型（留空则使用 Claude Code 配置中的 `ANTHROPIC_DEFAULT_SONNET_MODEL`）",
+  "cfg.model.desc": "覆盖生成 commit 所用的模型。优先级：此设置 > `ANTHROPIC_DEFAULT_SONNET_MODEL` > `ANTHROPIC_MODEL` > `claude-sonnet-4-6`。留空则从 Claude Code 配置自动解析。",
   "cfg.lang.desc": "生成 commit message 的语言。`auto` 从近期 commit 自动检测。",
   "cfg.format.desc": "commit 格式。`auto` 从近期 commit 自动检测。",
   "cfg.maxTokens.desc": "发送给模型的 diff 最大 token 估计量。超长 diff 会被截断，diffstat 保留完整。",
   "cfg.customPrompt.desc": "追加到 system prompt 末尾的自定义文本。可用于添加规则（如"始终提及 ticket 号"）。",
-  "cfg.recentCommits.desc": "用于风格检测的最近 commit 数量。"
+  "cfg.recentCommits.desc": "用于风格检测的最近 commit 数量。",
+  "cfg.baseUrl.desc": "覆盖 Anthropic API 地址。优先级最高，高于 `~/.claude/settings.json`。留空则使用 Claude Code CLI 配置。",
+  "cfg.apiKey.desc": "覆盖 API Key / Token。优先级最高，高于 `~/.claude/settings.json`。留空则使用 Claude Code CLI 配置。"
 }

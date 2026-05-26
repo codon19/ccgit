@@ -23,11 +23,31 @@ export async function generate(sc?: vscode.SourceControl): Promise<void> {
     const configResult = readClaudeConfig({
       workspaceRoot: repo.rootUri.fsPath,
     });
-    if (!configResult.ok) {
+
+    // Plugin settings override: highest priority
+    const baseUrlOverride = config.get<string>('baseUrl', '');
+    const apiKeyOverride = config.get<string>('apiKey', '');
+
+    // If plugin has both baseUrl and apiKey set, skip ccswitch config entirely
+    if (baseUrlOverride && apiKeyOverride) {
+      if (!configResult.ok) {
+        // Ignore ccswitch config errors when plugin settings are complete
+      }
+    } else if (!configResult.ok) {
       await showError(configResult.error);
       return;
     }
-    const claudeConfig = configResult.config;
+
+    const claudeConfig = configResult.ok ? configResult.config : {
+      baseUrl: 'https://api.anthropic.com',
+      authToken: '',
+      model: undefined,
+      source: 'user' as const,
+    };
+
+    // Apply plugin setting overrides (highest priority)
+    if (baseUrlOverride) claudeConfig.baseUrl = baseUrlOverride;
+    if (apiKeyOverride) claudeConfig.authToken = apiKeyOverride;
 
     const modelOverride = config.get<string>('model', '');
     if (modelOverride) {

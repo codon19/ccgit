@@ -1,5 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect width="128" height="128" rx="16" fill="#1a1a2e"/>
-  <text x="64" y="78" text-anchor="middle" font-family="monospace" font-size="48" font-weight="bold" fill="#e0e0e0">cc</text>
-  <text x="64" y="108" text-anchor="middle" font-family="monospace" font-size="24" fill="#7c7c9c">git</text>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e07a5f"/>
+      <stop offset="100%" stop-color="#c85a3a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Orange rounded square background (Claude style) -->
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+
+  <!-- Claude starburst (white rays from center) -->
+  <g transform="translate(64,56)">
+    <!-- Main rays -->
+    <line x1="0" y1="-26" x2="0" y2="-10" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <line x1="0" y1="10" x2="0" y2="26" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <line x1="-26" y1="0" x2="-10" y2="0" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <line x1="10" y1="0" x2="26" y2="0" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <!-- Diagonal rays -->
+    <line x1="-18" y1="-18" x2="-7" y2="-7" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="18" y1="-18" x2="7" y2="-7" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="-18" y1="18" x2="-7" y2="7" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="18" y1="18" x2="7" y2="7" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Shorter intermediate rays -->
+    <line x1="-12" y1="-22" x2="-5" y2="-9" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <line x1="12" y1="-22" x2="5" y2="-9" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-22" y1="-12" x2="-9" y2="-5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <line x1="22" y1="-12" x2="9" y2="-5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-22" y1="12" x2="-9" y2="5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <line x1="22" y1="12" x2="9" y2="5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="4" fill="white"/>
+  </g>
+
+  <!-- Git branch lines emerging from bottom of starburst -->
+  <path d="M 52 82 Q 52 90 46 96 L 38 104" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <path d="M 76 82 Q 76 90 82 96 L 90 104" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <line x1="64" y1="82" x2="64" y2="104" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- Git commit dots at branch ends -->
+  <circle cx="38" cy="106" r="4" fill="white" opacity="0.9"/>
+  <circle cx="64" cy="106" r="4" fill="white" opacity="0.9"/>
+  <circle cx="90" cy="106" r="4" fill="white" opacity="0.9"/>
 </svg>
