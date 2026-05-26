@@ -3,12 +3,12 @@
   "displayName": "ccgit",
   "description": "Zero-config AI commit message generator for Claude Code CLI users",
   "version": "0.1.0",
-  "publisher": "songguanghui",
+  "publisher": "codon19",
   "license": "MIT",
   "icon": "images/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/songguanghui/ccgit"
+    "url": "https://github.com/codon19/ccgit"
   },
   "engines": {
     "vscode": "^1.85.0",

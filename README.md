@@ -7,7 +7,7 @@
 ## 快速开始
 
 1. 安装 [ccswitch](https://github.com/farion1231/cc-switch) 并配置至少一个 Claude provider
-2. 从 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=songguanghui.ccgit) 安装 ccgit
+2. 从 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=codon19.ccgit) 安装 ccgit
 3. 在 VS Code 中暂存（Stage）你的变更
 4. 点击 Source Control 面板顶部的 ✨ 图标
 5. 检查生成的提交信息，确认后提交
