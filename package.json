@@ -22,7 +22,77 @@
     "onCommand:ccgit.openOutputPanel",
     "onCommand:ccgit.openConfigFile"
   ],
-  "contributes": {},
+  "contributes": {
+    "commands": [
+      {
+        "command": "ccgit.generate",
+        "title": "%cmd.generate.title%",
+        "category": "ccgit",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "ccgit.openOutputPanel",
+        "title": "%cmd.openOutput.title%",
+        "category": "ccgit"
+      },
+      {
+        "command": "ccgit.openConfigFile",
+        "title": "%cmd.openConfig.title%",
+        "category": "ccgit"
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "ccgit.generate",
+          "group": "navigation",
+          "when": "scmProvider == git"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "ccgit",
+      "properties": {
+        "ccgit.model": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "%cfg.model.desc%"
+        },
+        "ccgit.style.language": {
+          "type": "string",
+          "enum": ["auto", "english", "simplified-chinese", "traditional-chinese", "japanese", "korean"],
+          "default": "auto",
+          "markdownDescription": "%cfg.lang.desc%"
+        },
+        "ccgit.style.format": {
+          "type": "string",
+          "enum": ["auto", "conventional", "plain", "gitmoji"],
+          "default": "auto",
+          "markdownDescription": "%cfg.format.desc%"
+        },
+        "ccgit.diff.maxTokens": {
+          "type": "number",
+          "default": 12000,
+          "minimum": 1000,
+          "maximum": 100000,
+          "markdownDescription": "%cfg.maxTokens.desc%"
+        },
+        "ccgit.customSystemPrompt": {
+          "type": "string",
+          "default": "",
+          "editPresentation": "multilineText",
+          "markdownDescription": "%cfg.customPrompt.desc%"
+        },
+        "ccgit.recentCommitsForStyle": {
+          "type": "number",
+          "default": 20,
+          "minimum": 0,
+          "maximum": 100,
+          "markdownDescription": "%cfg.recentCommits.desc%"
+        }
+      }
+    }
+  },
   "scripts": {
     "build": "esbuild src/extension/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --target=node18 --sourcemap",
     "build:prod": "npm run build -- --minify --drop:debugger",

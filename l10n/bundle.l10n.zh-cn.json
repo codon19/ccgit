@@ -1,0 +1,20 @@
+{
+  "Claude Code config not found. Configure via ccswitch or run `claude setup-token`.": "未找到 Claude Code 配置文件。请使用 ccswitch 配置，或运行 `claude setup-token`。",
+  "Failed to parse config: {0}": "配置文件解析失败：{0}",
+  "ANTHROPIC_AUTH_TOKEN not found in Claude Code config.": "Claude Code 配置中未找到 ANTHROPIC_AUTH_TOKEN。",
+  "ANTHROPIC_BASE_URL is not a valid URL: {0}": "ANTHROPIC_BASE_URL 不是合法 URL：{0}",
+  "Current workspace is not a Git repository.": "当前工作区不是 Git 仓库。",
+  "No changes to summarize (staged and unstaged are both empty).": "没有可用于生成的变更（已暂存与未暂存均为空）。",
+  "VSCode built-in Git extension not available. Make sure it is enabled.": "VSCode 内置 Git 扩展不可用，请确保未禁用。",
+  "Authentication failed (HTTP {0}). Token may be expired.": "鉴权失败（HTTP {0}）。Token 可能已过期。",
+  "Rate limited. Retry in {0}s.": "请求被限流，{0}秒后重试。",
+  "Network error: {0}": "网络错误：{0}",
+  "Request timed out (30s). Relay may be unstable.": "请求超时（30秒）。中转站可能不稳定。",
+  "Model returned no valid commit message.": "模型未返回有效的 commit message。",
+  "Unexpected error. See output panel.": "意外错误，请查看输出面板。",
+  "Generating commit message...": "正在生成 commit message...",
+  "Help": "帮助",
+  "Open File": "打开文件",
+  "Open Output": "打开输出",
+  "Could not open {0}": "无法打开 {0}"
+}
