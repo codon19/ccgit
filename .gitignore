@@ -5,3 +5,6 @@ dist/
 out/
 coverage/
 .DS_Store
+
+# Internal planning/design docs — kept local, not published
+docs/
